@@ -15,6 +15,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { PropertyCardComponent } from './components/property-card/property-card.component';
+import { BackgroundComponent } from './components/ui-components/background/background.component';
+import { MatBadgeModule } from '@angular/material/badge';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,17 +29,22 @@ import { MatIconModule } from '@angular/material/icon';
     PropertyComponent,
     PropertyDetailsComponent,
     HeadingComponent,
+    PropertyCardComponent,
+    BackgroundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatBadgeModule,
     MatCardModule,
     MatButtonModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatIconModule,
+    MatGridListModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

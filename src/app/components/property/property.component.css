@@ -1,0 +1,67 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-content: center; */
+  align-items: center;
+}
+.top-section {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.top-section h1 {
+  font-size: 2.5em;
+  font-weight: bolder;
+  text-align: center;
+}
+.top-section h2 {
+  opacity: 0.7;
+  font-size: 1.5em;
+}
+.top-section p {
+  text-align: justify;
+  font-weight: 700;
+  opacity: 0.5;
+  font-size: 1.3em;
+  line-height: 1;
+}
+.top-section-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+.mat-grid-list {
+  position: unset;
+  margin-top: 5%;
+}
+.property-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.property {
+  margin: 2.5%;
+}
+:host ::ng-deep .mat-badge-content {
+  left: 0px !important;
+  top: 0px !important;
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  padding: 0px;
+  border-radius: 13px;
+  background-color: rgb(46, 172, 4);
+  box-shadow: 1px 1px 10px 1px rgba(128, 128, 128, 0.489);
+  transform: rotate(-20deg);
+}

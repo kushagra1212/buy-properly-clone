@@ -1,0 +1,104 @@
+.container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+.top-img-div {
+  position: relative;
+  width: 100%;
+}
+.top-img-div img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.property-details {
+  background-color: #ffffff9c;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  position: absolute;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  margin-top: 40%;
+  width: 90%;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 1px 1px 30px 1px grey;
+}
+.main-title {
+  font-size: 3.3em;
+  font-weight: 800;
+}
+.subtitle {
+  font-size: 2em;
+}
+.type {
+  margin-top: 1em;
+}
+.type h1 {
+  font-size: 3em;
+  font-weight: bolder;
+}
+.small-card {
+  background-color: #40535d;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  /* box-shadow: 1px 1px 10px 1px #7d91ff57; */
+  padding: 0.2em 0em;
+  color: white;
+  margin: 1em 0em;
+}
+.small-card span {
+  font-size: 2em;
+}
+.small-card h2 {
+  font-size: 1.5em;
+}
+.meeting-container {
+  margin: 1em 0em;
+  display: flex;
+  justify-content: flex-end;
+}
+.book-meeting-btn {
+  font-size: 1.4em;
+  padding: 0.5em;
+  background-color: white;
+  color: #407ce8;
+}
+.document-btn {
+  font-size: 1.4em;
+  padding: 0.5em;
+  background-color: white;
+  color: #232d3f;
+  margin-left: 1em;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+.share-btn {
+  padding: 0.5em;
+  background-color: #673ab7;
+  color: #ffffff;
+  font-size: 1.6em;
+  width: 25%;
+  box-shadow: 0px 0px 10px 0px grey;
+}
+.invest-btn {
+  padding: 0.5em;
+  background-color: #4caf50;
+  color: #ffffff;
+  font-size: 1.6em;
+  margin: 1em 0em;
+  box-shadow: 0px 0px 10px 0px grey;
+}
