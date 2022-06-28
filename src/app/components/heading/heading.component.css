@@ -1,0 +1,13 @@
+mat-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+  padding: 1%;
+}
+.mat-card:not([class*="mat-elevation-z"]) {
+  box-shadow: 1px 1px 10px -2px rgba(0, 0, 0, 0.379);
+}
+.login {
+  font-size: 1.3em;
+}
