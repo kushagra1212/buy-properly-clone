@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faBook, faCalendar } from '@fortawesome/free-solid-svg-icons';
-import { Property } from 'src/app/core/models/property';
 import { PropertyService } from 'src/app/core/services/property/property.service';
 
 @Component({

@@ -7,7 +7,7 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { PropertyDetailsComponent } from './components/property-details/property-details.component';
 import { PropertyComponent } from './components/property/property.component';
 import { AuthGuard } from './core/guard/auth/auth.guard';
-import { PropertiesGuard } from './core/guard/properties/properties.guard';
+import { PropertyGuard } from './core/guard/property/property.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,13 +15,13 @@ const routes: Routes = [
   {
     path: 'properties',
     component: PropertyComponent,
-    canActivate: [PropertiesGuard],
+    canActivate: [PropertyGuard],
   },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   {
     path: 'property-details/:property-slurp',
     component: PropertyDetailsComponent,
-    canActivate: [PropertiesGuard],
+    canActivate: [PropertyGuard],
   },
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent },
 ];
