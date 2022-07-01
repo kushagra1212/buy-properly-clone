@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faBed, faHome, faBath } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -10,7 +10,12 @@ export class PropertyCardComponent implements OnInit {
   faBed = faBed;
   faHome = faHome;
   faBath = faBath;
-  constructor() {}
 
+  loading: boolean = true;
+  @Input() property: any;
+  constructor() {}
   ngOnInit(): void {}
+  onLoad() {
+    this.loading = false;
+  }
 }

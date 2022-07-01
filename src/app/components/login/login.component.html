@@ -13,14 +13,14 @@
         <form [formGroup]="formdata" (ngSubmit)="onClickSubmit()">
           <div class="form-element">
             <h2>Email</h2>
-            <input type="text" name="email" placeholder="Enter your email" [formControl]="email">
+            <input type="text" name="email" placeholder="Enter your email" formControlName="email">
           </div>
           <div class="form-element">
             <h2>Password</h2>
             <input type="password" name="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"
-              [formControl]="password">
+              formControlName="password">
           </div>
-          <button routerLink="/home" type="submit" class="login" mat-raised-button color="primary">Log in</button>
+          <button type="submit" class="login" mat-raised-button color="primary">Log in</button>
         </form>
       </mat-card-content>
     </div>

@@ -2,6 +2,6 @@
   <div class="top"> <img src="../../../assets/images/BuyProperly.png" alt="logo" />
     <mat-card-title>BUYPROPERLY</mat-card-title>
   </div>
-  <button class="login" mat-raised-button color="primary">Login</button>
-
+  <button *ngIf="!isLoggedIn" class="login" mat-raised-button (click)="logInHandler()" color="primary">Login</button>
+  <button *ngIf="isLoggedIn" class="logout" (click)="logOuthandler()" mat-raised-button color="primary">Logout</button>
 </mat-card>

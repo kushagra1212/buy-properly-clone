@@ -1,19 +1,23 @@
-<div routerLink="/property-details" class="card">
+<div [routerLink]="'/property-details/'+property.property_slurp" class=" card">
   <div class="tag">
 
   </div>
   <div class="top-section">
     <div class="top-left-section">
-      <img src="https://buyproperly-common-ca.s3.ca-central-1.amazonaws.com/properties/prop_18_phoenix/4.jpg"
-        alt="NAN" />
+      <img [hidden]="loading" (load)="onLoad()" src="{{property.img_src_main}}" alt="NAN" />
+
       <div class="title">
         <h1 class="property_card_title">
           <!-- address_area -->
-          Phoenix, US
+          {{property.address_area}}
         </h1>
-        <h2 class="property_card_subtitle">
+        <h2 *ngIf="property.property_card_subtitle" class="property_card_subtitle">
           <!-- property_card_subtitle -->
-          The Phoenix Portfolio
+          {{property.property_card_subtitle}}
+        </h2>
+        <h2 *ngIf="!property.property_card_subtitle" class="property_card_subtitle">
+          <!-- property_card_subtitle -->
+          {{property.address}}
         </h2>
       </div>
     </div>
@@ -22,21 +26,34 @@
         <!-- heading -->
         Multi Family Residential
       </h1>
+
       <hr />
 
       <div class="card-details">
         <div class="content-2">
-          <div class="content-2-box">
+          <div *ngIf="property.total_offering!==null else elseblock" class="content-2-box">
             <h3>Total Offering</h3>
-            <span style="    background-color: #8bc34ab0;">$ 200,000</span>
+            <span style="    background-color: #8bc34ab0;">{{property.total_offering | currency}}</span>
           </div>
-          <div class="content-2-box">
+          <ng-template #elseblock>
+            <div class="content-2-box">
+              <h3>Purchase Price</h3>
+              <span style="    background-color: #8bc34ab0;">{{property.purchase_price | currency}}</span>
+            </div>
+          </ng-template>
+          <div *ngIf="property.total_term!==null else elseblock2" class="content-2-box">
             <h3>Project Term</h3>
-            <span style="    background-color: #cddc39b8;">3 years</span>
+            <span style="    background-color: #cddc39b8;">{{property.total_term}}</span>
           </div>
+          <ng-template #elseblock2>
+            <div class="content-2-box">
+              <h3>Projected Gross Rental Yield</h3>
+              <span style="    background-color: #cddc39b8;">{{property.rental_yield}} %</span>
+            </div>
+          </ng-template>
           <div class="content-2-box">
             <h3>Projected Annual ROI</h3>
-            <span style="    background-color: #2196f347;">36.6 %</span>
+            <span style="    background-color: #2196f347;">{{property.projected_annual_returns_min}} %</span>
           </div>
         </div>
       </div>
@@ -48,18 +65,24 @@
     <!-- if dimensions==null -->
     <!-- <div class="container-1"></div> -->
     <!-- else -->
-    <div class="container-2">
+    <div *ngIf="property.is_preconstruction_property===true" class="container-2">
+      <div>Redevelopment</div>
+    </div>
+    <div *ngIf="property.is_preconstruction_property===false" class="container-2">
+      <div>Value Add Property</div>
+    </div>
+    <div *ngIf="property.is_preconstruction_property===null" class="container-2">
       <div>
         <fa-icon [icon]="faBed"></fa-icon>
-        <label>1200 sq ft</label>
+        <label>{{property.dimensions}}</label>
       </div>
       <div>
         <fa-icon [icon]="faHome"></fa-icon>
-        <label>5</label>
+        <label>{{property.bedrooms}}</label>
       </div>
       <div>
         <fa-icon [icon]="faBath"></fa-icon>
-        <label>5</label>
+        <label>{{property.bedrooms}}</label>
       </div>
     </div>
 

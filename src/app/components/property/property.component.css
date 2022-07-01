@@ -48,7 +48,7 @@
   align-items: center;
 }
 .property {
-  margin: 2.5%;
+  margin: 2em;
 }
 :host ::ng-deep .mat-badge-content {
   left: 0px !important;
@@ -64,4 +64,8 @@
   background-color: rgb(46, 172, 4);
   box-shadow: 1px 1px 10px 1px rgba(128, 128, 128, 0.489);
   transform: rotate(-20deg);
+}
+::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #369836;
 }

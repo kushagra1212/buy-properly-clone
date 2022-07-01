@@ -1,4 +1,5 @@
 <div class="container">
+
   <div class="top-section">
     <h1>
       INVEST WITH CONFIDENCE
@@ -20,31 +21,21 @@
   </div>
 
   <app-background></app-background>
+
+  <mat-spinner color="green" *ngIf="!isLoading"></mat-spinner>
   <div class="property-list">
 
-    <span matBadge="Selling Fast 📈" matBadgeOverlap="false">
-      <div class="property">
-        <app-property-card></app-property-card>
-      </div>
-    </span>
-    <div class="property">
-      <app-property-card></app-property-card>
+    <div *ngFor="let property of propertyList | paginate: config">
+      <span *ngIf="!property.isAdvertisement" [matBadge]="( property.marketing_tags!==null)?'Selling Fast 📈':
+        'Shares Available'" matBadgeOverlap=false>
+        <div class="property">
+          <app-property-card [property]="property"></app-property-card>
+        </div>
+      </span>
+
     </div>
 
-    <div class="property">
-      <app-property-card></app-property-card>
-    </div>
-    <div class="property">
-      <app-property-card></app-property-card>
-    </div>
-    <div class="property">
-      <app-property-card></app-property-card>
-    </div>
-    <div class="property">
-      <app-property-card></app-property-card>
-    </div>
-    <div class="property">
-      <app-property-card></app-property-card>
-    </div>
   </div>
+  <pagination-controls [responsive]="true" (pageChange)="getNextData( $event)">
+  </pagination-controls>
 </div>

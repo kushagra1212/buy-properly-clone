@@ -26,7 +26,7 @@
   z-index: 2;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  margin-top: 40%;
+  margin-top: 35em;
   width: 90%;
   padding: 2em;
   border-radius: 10px;
@@ -70,7 +70,7 @@
   justify-content: flex-end;
 }
 .other-details {
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,6 +81,7 @@
   font-size: 1.1em;
   padding: 0.5em;
   background-color: white;
+  border-radius: 10px;
   color: #407ce8;
 }
 .document-btn {
@@ -89,6 +90,7 @@
   background-color: white;
   color: #232d3f;
   margin-left: 1em;
+  border-radius: 10px;
 }
 .buttons {
   display: flex;
@@ -101,7 +103,8 @@
   color: #ffffff;
   font-size: 1.5em;
   width: 80%;
-  margin-top: 2em;
+  margin: 2em;
+  border-radius: 10px;
   box-shadow: 0px 0px 10px 0px grey;
 }
 .invest-btn {
@@ -112,6 +115,7 @@
   margin: 1em 0em;
   box-shadow: 0px 0px 10px 0px grey;
   width: 50%;
+  border-radius: 10px;
 }
 .middle-section {
   display: flex;
@@ -129,10 +133,51 @@
   border-radius: 10px;
 }
 .images img:nth-child(1) {
-  width: 30%;
+  width: 40%;
   height: 50%;
+  margin: 1em 0em;
 }
 .images img:nth-child(2) {
   width: 50%;
   height: 50%;
+}
+
+.carousel {
+  height: 400px;
+  width: 300px;
+}
+.carousel-cells .carousel-cel {
+  width: 1000px;
+}
+.progress-loader {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+.progress-loader :nth-child(2) {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 5%;
+}
+mat-spinner {
+  color: rgb(47, 255, 82);
+}
+@media screen and (max-width: 800px) {
+  .property-details {
+    margin-top: 100em;
+  }
+  .middle-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .other-details {
+    width: 100%;
+  }
+  .images img:nth-child(1) {
+    width: 100%;
+    height: 50%;
+  }
 }
