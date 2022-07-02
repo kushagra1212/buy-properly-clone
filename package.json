@@ -26,6 +26,8 @@
     "@ngrx/effects": "^14.0.1",
     "@ngrx/store": "^14.0.1",
     "@ngrx/store-devtools": "^14.0.1",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
     "angular-responsive-carousel": "^2.1.2",
     "ngx-pagination": "^6.0.2",
     "ngx-skeleton-loader": "^5.0.0",

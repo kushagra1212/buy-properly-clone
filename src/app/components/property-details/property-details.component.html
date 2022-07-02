@@ -29,37 +29,37 @@
     </div>
     <div class="type">
       <h1>
-        Multi Family Residential</h1>
+        {{'propertyDetails.type'| translate}}</h1>
     </div>
     <div class="middle-section">
       <div class="other-details">
         <div *ngIf="property.total_offering!==null else elseblock" class="small-card">
-          <h2>Total Offering</h2>
+          <h2> {{'propertyDetails.totalOffering'| translate}}</h2>
           <span>{{property.total_offering | currency}}</span>
         </div>
         <ng-template #elseblock>
           <div class="small-card">
-            <h2>Purchase Price</h2>
+            <h2> {{'propertyDetails.purchasePrice'| translate}}</h2>
             <span>{{property.purchase_price | currency}}</span>
           </div>
         </ng-template>
         <div *ngIf="property.total_term!==null else elseblock2" class="small-card">
-          <h2>Project Term</h2>
+          <h2> {{'propertyDetails.projectTerm'| translate}}</h2>
           <span>{{property.total_term}}</span>
 
         </div>
         <ng-template #elseblock2>
           <div class="small-card">
-            <h2>Projected Gross Rental Yield</h2>
+            <h2> {{'propertyDetails.PGRY'| translate}}</h2>
             <span>{{property.rental_yield}} %</span>
           </div>
         </ng-template>
         <div class="small-card">
-          <h2>Projected Annual ROI</h2>
+          <h2>{{'propertyDetails.A_ROI'| translate}}</h2>
           <span>{{property.projected_annual_returns_min}} %</span>
         </div>
         <button mat-button class="shares-btn" color="primary">
-          Shares Available
+          {{'propertyDetails.sharesAvail'| translate}}
         </button>
       </div>
       <div class="images">
@@ -71,21 +71,19 @@
     </div>
     <div class="meeting-container">
       <button class="book-meeting-btn" mat-stroked-button color="primary">
-        <fa-icon [icon]="faCalendar"></fa-icon>&nbsp;Book a Meeting
+        <fa-icon [icon]="faCalendar"></fa-icon>&nbsp; {{'propertyDetails.meeting'| translate}}
       </button>
       <button class="document-btn" mat-stroked-button color="primary">
-        <fa-icon [icon]="faBook"></fa-icon> &nbsp;Documents
+        <fa-icon [icon]="faBook"></fa-icon> &nbsp; {{'propertyDetails.documents'| translate}}
       </button>
     </div>
     <div class="buttons">
 
       <button class="invest-btn" mat-button color="primary">
-        Invest
+        {{'propertyDetails.invest'| translate}}
       </button>
       <div class="note">
-        <p>Capital At Risk - Please read Key Risks and Purchaser's Rights before investing.
-          Note: Investment metrics displayed on this page are based on Selling Price/Share of $10 and property closing
-          date of Aug 2021.</p>
+        <p> {{'propertyDetails.riskNote'| translate}}</p>
 
       </div>
     </div>

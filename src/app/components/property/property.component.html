@@ -2,19 +2,18 @@
 
   <div class="top-section">
     <h1>
-      INVEST WITH CONFIDENCE
+      {{'property.message.heading' | translate}}
     </h1>
     <h3>
-      Hassle free real estate investment
+      {{'property.message.subHeading' | translate}}
     </h3>
-    <p>Our proprietary AI sourcing model, analyzes hundreds of factors, and evaluates thousands of properties, to
-      provide you with selected highly qualified investment properties.</p>
+    <p> {{'property.message.paragrph' | translate}}</p>
     <div class="top-section-bottom">
-      <label style="margin-right:5px;">Need advice?</label>
+      <label style="margin-right:5px;">{{'property.know.advice' | translate}}</label>
       <button mat-stroked-button color="primary">
         <mat-icon class="material-icons-outlined">
-          event
-        </mat-icon>&nbsp;Book a Meeting
+          {{'property.know.event' | translate}}
+        </mat-icon>&nbsp; {{'property.know.meeting' | translate}}
       </button>
     </div>
 
@@ -26,9 +25,9 @@
   <div class="property-list">
 
     <div *ngFor="let property of propertyList | paginate: config">
-      <span *ngIf="!property.isAdvertisement" [matBadge]="( property.marketing_tags!==null)?'Selling Fast 📈':
-        'Shares Available'" matBadgeOverlap=false>
-        <div class="property">
+      <span *ngIf="!property.isAdvertisement"
+        [matBadge]="( property.marketing_tags!==null)?'Selling Fast 📈': 'Shares Available'" matBadgeOverlap=false>
+        <div class=" property">
           <app-property-card [property]="property"></app-property-card>
         </div>
       </span>

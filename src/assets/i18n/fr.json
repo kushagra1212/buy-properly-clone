@@ -1,0 +1,63 @@
+{
+  "property": {
+    "message": {
+      "heading": "INVESTISSEZ EN TOUTE CONFIANCE",
+      "subHeading": "Investissement immobilier sans tracas",
+      "paragrph": "Notre modèle d’approvisionnement exclusif en IA analyse des centaines de facteurs et évalue des milliers de propriétés, afin de vous fournir des immeubles de placement hautement qualifiés sélectionnés."
+    },
+    "know": {
+      "advice": "Besoin de conseils ?",
+      "event": "événement",
+      "meeting": "Réserver une réunion"
+    },
+    "badges": {
+      "sellingFast": "Vendre vite 📈",
+      "sharesAvail": "Partages disponibles"
+    }
+  }
+  ,
+  "logIn": {
+    "logIn": "S'identifier",
+    "welcomeMessage": "Bienvenue! Veuillez entrer vos coordonnées",
+    "email": "Messagerie électronique",
+    "password": "Mot de passe"
+  },
+  "propertyCard": {
+    "type": "Résidentiel multifamilial",
+    "totalOffering": "Offre totale",
+    "purchasePrice": "Prix d’achat",
+    "projectTerm": "Durée du projet",
+    "PGRY": "Rendement locatif brut projeté",
+    "A_ROI": "ROI annuel projeté",
+    "redevelopment": "Réaménagement",
+    "valueAddProperty": "Value Add, propriété",
+    "InvestNow": "Investir maintenant"
+  },
+    "propertyDetails": {
+      "type": "Résidentiel multifamilial",
+      "totalOffering": "Offre totale",
+      "purchasePrice": "Prix d’achat",
+      "projectTerm": "Durée du projet",
+      "PGRY": "Rendement locatif brut projeté",
+      "A_ROI": "Retour sur investissement annuel projeté",
+      "sharesAvail": "Partages disponibles",
+      "meeting": "Réserver une réunion",
+      "documents": "Documents",
+      "invest": "Investir",
+      "riskNote": "Capital à risque - Veuillez lire Principaux risques et droits de l’acheteur avant d’investir. Remarque : Les mesures d’investissement affichées sur cette page sont basées sur le prix de vente/action de 10 $ et la date de clôture de la propriété d’août 2021"
+    },
+      "pageNotFound": "PAGE INTROUVABLE",
+      "home": {
+        "titlePart1": "SIMPLE. INTELLIGENT.",
+        "titlePart2": "ACCESSIBLE",
+        "midSectionHeading": "L’investissement immobilier fait pour vous",
+        "messageBold": "BuyProperly vous permet d’investir dans l’immobilier pour faire croître et diversifier votre patrimoine sans coûts initiaux traditionnels.",
+        "message": "À partir de 2500 $, notre plate-forme alimentée par l’IA vous aide à atteindre des performances supérieures à celles de l’homme en générant des revenus locatifs mensuels, ainsi qu’une appréciation du capital.",
+        "viewProperties": "Afficher les propriétés"
+      },
+      "header": {
+        "logIn": "s'identifier",
+        "logOut": "se déconnecter"
+      }
+
+}

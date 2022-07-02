@@ -24,7 +24,7 @@
     <div class="top-right-section">
       <h1>
         <!-- heading -->
-        Multi Family Residential
+        {{'propertyCard.type' | translate}}
       </h1>
 
       <hr />
@@ -32,27 +32,27 @@
       <div class="card-details">
         <div class="content-2">
           <div *ngIf="property.total_offering!==null else elseblock" class="content-2-box">
-            <h3>Total Offering</h3>
+            <h3> {{'propertyCard.totalOffering' | translate}}</h3>
             <span style="    background-color: #8bc34ab0;">{{property.total_offering | currency}}</span>
           </div>
           <ng-template #elseblock>
             <div class="content-2-box">
-              <h3>Purchase Price</h3>
+              <h3> {{'propertyCard.purchasePrice' | translate}}</h3>
               <span style="    background-color: #8bc34ab0;">{{property.purchase_price | currency}}</span>
             </div>
           </ng-template>
           <div *ngIf="property.total_term!==null else elseblock2" class="content-2-box">
-            <h3>Project Term</h3>
+            <h3> {{'propertyCard.projectTerm' | translate}}</h3>
             <span style="    background-color: #cddc39b8;">{{property.total_term}}</span>
           </div>
           <ng-template #elseblock2>
             <div class="content-2-box">
-              <h3>Projected Gross Rental Yield</h3>
+              <h3>{{'propertyCard.PGRY' | translate}}</h3>
               <span style="    background-color: #cddc39b8;">{{property.rental_yield}} %</span>
             </div>
           </ng-template>
           <div class="content-2-box">
-            <h3>Projected Annual ROI</h3>
+            <h3>{{'propertyCard.A_ROI' | translate}}</h3>
             <span style="    background-color: #2196f347;">{{property.projected_annual_returns_min}} %</span>
           </div>
         </div>
@@ -66,10 +66,10 @@
     <!-- <div class="container-1"></div> -->
     <!-- else -->
     <div *ngIf="property.is_preconstruction_property===true" class="container-2">
-      <div>Redevelopment</div>
+      <div>{{'propertyCard.redevelopment' | translate}}</div>
     </div>
     <div *ngIf="property.is_preconstruction_property===false" class="container-2">
-      <div>Value Add Property</div>
+      <div>{{'propertyCard.valueAddProperty' | translate}}</div>
     </div>
     <div *ngIf="property.is_preconstruction_property===null" class="container-2">
       <div>
@@ -90,7 +90,7 @@
 
   <div class="bottom-section">
 
-    <button routerLink="/property-details" class="view-property-button" mat-raised-button color="primary">Invest
-      Now</button>
+    <button routerLink="/property-details" class="view-property-button" mat-raised-button
+      color="primary">{{'propertyCard.InvestNow' | translate}}</button>
   </div>
 </div>

@@ -24,14 +24,23 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './store/app.reducer';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { PropertiesEffects } from './store/properties/properties.effects';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { MatSelectModule } from '@angular/material/select';
 import { AuthService } from './core/services/auth/auth.service';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FormsModule } from '@angular/forms';
+
+//exported function for factories!
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -57,12 +66,14 @@ import { AuthService } from './core/services/auth/auth.service';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatIconModule,
+    FormsModule,
     MatGridListModule,
     NgxPaginationModule,
     NgxSkeletonLoaderModule,
     HttpClientModule,
     FontAwesomeModule,
     IvyCarouselModule,
+    MatSelectModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -75,6 +86,13 @@ import { AuthService } from './core/services/auth/auth.service';
       logOnly: environment.production,
     }),
     EffectsModule.forRoot([PropertiesEffects]),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

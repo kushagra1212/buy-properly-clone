@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 
 @Component({
@@ -9,7 +10,13 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn: Boolean = false;
-  constructor(private authService: AuthService, private router: Router) {
+  defaultLang: String = 'en';
+  selectedlang: String = 'en';
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    public translate: TranslateService
+  ) {
     this.authService.loggedIn$.subscribe((data) => (this.isLoggedIn = data));
   }
   checkIsLoggedIn() {
@@ -25,5 +32,8 @@ export class HeaderComponent implements OnInit {
   }
   ngOnInit(): void {
     this.checkIsLoggedIn();
+  }
+  onLanguageChange(lang: string): void {
+    this.translate.use(lang);
   }
 }
