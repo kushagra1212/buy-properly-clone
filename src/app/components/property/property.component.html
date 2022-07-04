@@ -21,7 +21,7 @@
 
   <app-background></app-background>
 
-  <mat-spinner color="green" *ngIf="!isLoading"></mat-spinner>
+  <mat-spinner color="green" *ngIf="isLoading"></mat-spinner>
   <div class="property-list">
 
     <div *ngFor="let property of propertyList | paginate: config">
@@ -34,7 +34,8 @@
 
     </div>
 
+    <pagination-controls (pageChange)="getNextData( $event)">
+    </pagination-controls>
   </div>
-  <pagination-controls [responsive]="true" (pageChange)="getNextData( $event)">
-  </pagination-controls>
+
 </div>

@@ -36,7 +36,9 @@ import { AuthService } from './core/services/auth/auth.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
 //exported function for factories!
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -74,6 +76,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     FontAwesomeModule,
     IvyCarouselModule,
     MatSelectModule,
+    FlexLayoutModule,
+    MatSidenavModule,
+    MatToolbarModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

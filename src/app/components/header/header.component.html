@@ -1,20 +1,47 @@
-<mat-card>
-  <div class="top"> <img src="../../../assets/images/BuyProperly.png" alt="logo" />
-    <mat-card-title>BUYPROPERLY</mat-card-title>
-  </div>
-  <div>
-    <div class="select-div">
-      <label>Change language</label>
-      <select [(ngModel)]="selectedlang" (ngModelChange)="onLanguageChange($event)">
-        <option *ngFor="let lang of translate.getLangs()" [ngValue]="lang">
-          {{lang}}</option>
-      </select>
+<div class="card">
+  <mat-toolbar style="position:sticky;">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
     </div>
-    <button *ngIf=" !isLoggedIn" class="login" mat-raised-button (click)="logInHandler()"
-      color="primary">{{'header.logIn'|
-      translate}}</button>
-    <button *ngIf="isLoggedIn" class="logout" (click)="logOuthandler()" mat-raised-button
-      color="primary">{{'header.logOut'|
-      translate}}</button>
-  </div>
-</mat-card>
+    <div routerLink="/" class="top"> <img src="../../../assets/images/BuyProperly.png" alt="logo" />
+      <mat-card-title>BUYPROPERLY</mat-card-title>
+    </div>
+    <div class="select-div" fxShow="true" fxHide.lt-md="true">
+      <button *ngIf=" !isLoggedIn" class="login" mat-raised-button (click)="loginHandler()"
+        color="primary">{{'header.logIn'|
+        translate}}</button>
+      <button *ngIf="isLoggedIn" class="logout" (click)="logoutHandler()" mat-raised-button
+        color="primary">{{'header.logOut'|
+        translate}}</button>
+      <div style="margin-left:1em;">
+        <mat-select style="margin-right:1em;" [(ngModel)]="selectedLang" (ngModelChange)="onLanguageChange($event)">
+          <mat-option *ngFor="let lang of translate.getLangs()" [value]="lang">
+            {{lang}}
+          </mat-option>
+        </mat-select>
+      </div>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container style="height: 100%;">
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
+      <div class="sidenav-div" fxLayout="column">
+        <button *ngIf=" !isLoggedIn" class="login" mat-raised-button (click)="loginHandler()"
+          color="primary">{{'header.logIn'|
+          translate}}</button>
+        <button *ngIf="isLoggedIn" class="logout" (click)="logoutHandler()" mat-raised-button
+          color="primary">{{'header.logOut'|
+          translate}}</button>
+        <mat-select [(ngModel)]="selectedLang" (ngModelChange)="onLanguageChange($event)">
+          <mat-option *ngFor="let lang of translate.getLangs()" [value]="lang">
+            {{lang}}
+          </mat-option>
+        </mat-select>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <ng-content select="router-outlet"></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

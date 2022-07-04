@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       .login(this.formdata.getRawValue())
       .subscribe((isSuccess) => {
         if (isSuccess) {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']);
         }
       });
     this.formdata.reset();

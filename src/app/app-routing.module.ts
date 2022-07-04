@@ -10,8 +10,7 @@ import { AuthGuard } from './core/guard/auth/auth.guard';
 import { PropertyGuard } from './core/guard/property/property.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   {
     path: 'properties',
     component: PropertyComponent,

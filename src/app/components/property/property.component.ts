@@ -22,7 +22,7 @@ export class PropertyComponent implements OnInit {
   pageNumber = 1;
   itemsPerPage = 5;
   config: any;
-  isLoading: Boolean = true;
+  isLoading: Boolean;
   constructor(private store: Store) {
     this.totalPropertyCount = 0;
     this.propertyList = [];
@@ -32,6 +32,7 @@ export class PropertyComponent implements OnInit {
       currentPage: this.pageNumber,
       totalItems: this.totalPropertyCount,
     };
+    this.isLoading = true;
   }
   getData() {
     this.store.dispatch(new LoadProperties());
@@ -39,13 +40,12 @@ export class PropertyComponent implements OnInit {
       this.propertyList = data.data;
       this.totalPropertyCount = data.totalCount;
       this.config.totalItems = data.totalCount;
-      this.isLoading = false;
     });
 
     this.store.pipe(select(getErrorFromProperties)).subscribe((err) => {
       this.errMessage = err;
-      this.isLoading = false;
     });
+
     this.scrollToTop();
   }
   getPropertyList(): void {
@@ -68,10 +68,11 @@ export class PropertyComponent implements OnInit {
             });
         }
       });
+    this.isLoading = false;
   }
 
   getNextData(page: any) {
-    this.isLoading = true;
+    this.scrollToTop();
     this.store.dispatch(
       new UpdateOffset({ offset: (page - 1) * this.itemsPerPage })
     );

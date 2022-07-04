@@ -11,23 +11,25 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 export class HeaderComponent implements OnInit {
   isLoggedIn: Boolean = false;
   defaultLang: String = 'en';
-  selectedlang: String = 'en';
+  selectedLang: String = 'en';
   constructor(
     private authService: AuthService,
     private router: Router,
     public translate: TranslateService
   ) {
-    this.authService.loggedIn$.subscribe((data) => (this.isLoggedIn = data));
+    this.authService.loggedIn$.subscribe(
+      (isLogged) => (this.isLoggedIn = isLogged)
+    );
   }
-  checkIsLoggedIn() {
+  checkIsLoggedIn(): void {
     if (this.authService.isLoggedIn()) this.isLoggedIn = true;
   }
-  logOuthandler() {
+  logoutHandler(): void {
     this.authService.logOut();
     this.isLoggedIn = false;
     this.router.navigate(['/login']);
   }
-  logInHandler() {
+  loginHandler() {
     this.router.navigate(['/login']);
   }
   ngOnInit(): void {
